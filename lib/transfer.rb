@@ -13,9 +13,11 @@ class Transfer
   end
   
   def execute_transaction
-    1.time do @sender.balance -= @amount end
-    1.time do @receiver.balance += @amount end
-    @status = "complete"
+    unless @status = complete 
+      @sender.balance -= @amount end
+      @receiver.balance += @amount end
+      @status = "complete"
+    end
     
   end 
   
