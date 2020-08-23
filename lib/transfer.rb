@@ -18,7 +18,7 @@ class Transfer
       @receiver.balance += @amount 
       @status = "complete"
     end
-    
+    "Transaction rejected"
   end 
   
 end
